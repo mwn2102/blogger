@@ -5,6 +5,8 @@
     <li>
       <%= link_to tag.name, article_path(tag)%>
     </li>
-    <p><%= link_to "delete", tag_path(tag), method: :delete, data: {confirm: "Really delete the tag?"}%></p>
+    <% if logged_in? %>
+      <p><%= link_to "delete", tag_path(tag), method: :delete, data: {confirm: "Really delete the tag?"}%></p>
+    <%end%>  
   <% end %>
 </ul>
